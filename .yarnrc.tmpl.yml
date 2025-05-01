@@ -1,0 +1,8 @@
+yarnPath: .yarn/releases/yarn-3.2.2.cjs
+nodeLinker: node-modules
+
+npmScopes:
+  wppopen:
+    npmRegistryServer: 'https://npm.pkg.github.com'
+    npmAlwaysAuth: true
+    npmAuthToken: ${WPP_OPEN_GITHUB_TOKEN}

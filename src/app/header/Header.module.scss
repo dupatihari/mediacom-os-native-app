@@ -1,0 +1,14 @@
+.wppTopBar {
+  background-color: var(--wpp-white-color);
+}
+
+.wppTopBarLogo {
+  display: flex;
+  align-items: center;
+  margin-right: 32px;
+}
+
+.wppTopBarTitle {
+  margin-left: 12px;
+  white-space: nowrap;
+}

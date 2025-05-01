@@ -1,0 +1,12 @@
+{
+  "extends": "ts-config-single-spa",
+  "compilerOptions": {
+    "lib": ["DOM", "ESNext"],
+    "baseUrl": "src",
+    "strict": true,
+    "jsx": "react-jsx",
+    "downlevelIteration": true,
+    "esModuleInterop": true
+  },
+  "include": ["src"]
+}

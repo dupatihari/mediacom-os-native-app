@@ -1,0 +1,94 @@
+# This is an example of Gitlab CI configration
+# Any other CI platform and build steps can be used
+
+image: node:16.13.0-bullseye
+
+variables:
+  DEPLOYMENT:
+    description: Deployment to rollout new version
+    value: hulk
+  OSMIUM_ACCESS_TOKEN: ${CI_JOB_TOKEN}
+
+include:
+  - project: ${WPP_GITLAB_TEMPLATES_PATH}
+    ref: ${WPP_CI_TEMPLATES_TAG}
+    file:
+      - /build/docker.yaml
+      - /deployment/gke.yaml
+
+stages:
+  - test&build
+  - docker
+  - deploy
+
+.yarn_init: &yarn_init
+  - mv .yarnrc.tmpl.yml .yarnrc.yml
+  - corepack enable
+
+.cache_config: &cache_config
+  cache:
+    key:
+      files:
+        - yarn.lock
+        - package.json
+    paths:
+      - node_modules/
+      - .yarn
+
+test:
+  stage: test&build
+  <<: *cache_config
+  tags:
+    - wpp-open
+  allow_failure: true
+  before_script:
+    - *yarn_init
+  script:
+    - yarn set version 3.2.2
+    - yarn install
+    - yarn lint
+  artifacts:
+    when: always
+    paths:
+      - test-results-path
+    expire_in: 2 weeks
+
+build:
+  stage: test&build
+  <<: *cache_config
+  tags:
+    - wpp-open
+  before_script:
+    - *yarn_init
+  script:
+    - yarn install
+    - yarn build
+  dependencies:
+    - test
+  artifacts:
+    paths:
+      - dist
+    expire_in: 2 weeks
+
+docker:
+  extends: .docker
+  dependencies:
+    - build
+
+deploy_qa_auto:
+  extends: .deploy_gke
+  except:
+    - schedules
+  variables:
+    DEPLOYMENT: "hulk"
+  dependencies:
+    - docker
+  only:
+    refs:
+      - develop
+
+deploy_qa_manual:
+  extends: .deploy_gke
+  when: manual
+  dependencies:
+    - docker

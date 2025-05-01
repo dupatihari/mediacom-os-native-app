@@ -1,0 +1,9 @@
+.container {
+  background-color: var(--wpp-grey-color-100);
+  min-height: calc(100vh - var(--wpp-os-header-height));
+}
+
+.pageContent {
+  width: 1016px;
+  margin: 0 auto;
+}
