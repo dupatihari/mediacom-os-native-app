@@ -80,7 +80,7 @@ deploy_qa_auto:
   except:
     - schedules
   variables:
-    DEPLOYMENT: "hulk"
+    DEPLOYMENT: 'hulk'
   dependencies:
     - docker
   only:

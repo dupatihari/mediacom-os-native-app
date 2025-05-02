@@ -1,14 +1,7 @@
 module.exports = {
   customSyntax: require('postcss-scss'),
-  extends: [
-    'stylelint-config-standard',
-    'stylelint-config-rational-order',
-    'stylelint-prettier/recommended',
-  ],
-  plugins: [
-    'stylelint-order',
-    'stylelint-scss',
-  ],
+  extends: ['stylelint-config-standard', 'stylelint-config-rational-order', 'stylelint-prettier/recommended'],
+  plugins: ['stylelint-order', 'stylelint-scss'],
   rules: {
     'at-rule-no-unknown': null,
     'scss/at-rule-no-unknown': true,
@@ -18,4 +11,4 @@ module.exports = {
     'color-hex-length': 'long',
     'block-no-empty': null,
   },
-};
+}
