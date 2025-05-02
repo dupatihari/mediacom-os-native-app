@@ -2,7 +2,7 @@
   "name": "react-app-boilerplate",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "yarn@3.2.2",
+  "packageManager": "yarn@1.22.15",
   "engines": {
     "npm": "please-use-yarn",
     "yarn": "=1.22.15",

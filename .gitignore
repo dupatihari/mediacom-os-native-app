@@ -79,7 +79,6 @@ dist
 .yarnrc.yml
 
 # To use IDE helpers
-.npmrc
 
 # test results
 e2e/test-results/
