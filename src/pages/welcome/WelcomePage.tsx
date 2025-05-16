@@ -13,7 +13,7 @@ import styles from 'pages/welcome/WelcomePage.module.scss'
 export const WelcomePage = () => {
   const { osContext, osApi } = useOs()
   const { firstname, lastname, country, agency, email, id } = osContext.userDetails
-
+  console.log('osContext:', osContext)
   const cardsData = [
     {
       title: 'Build Your App',

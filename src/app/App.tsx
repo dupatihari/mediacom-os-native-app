@@ -4,6 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 import styles from 'app/App.module.scss'
 import { Header } from 'app/header/Header'
+import ContextInfoPage from 'pages/contextInfo/ContextInfoPage'
 import { NavigationAndWorkspacesPage } from 'pages/navigationAndWorkspaces/NavigationAndWorkspacesPage'
 import { WelcomePage } from 'pages/welcome/WelcomePage'
 
@@ -27,6 +28,7 @@ export function App() {
           <Routes>
             <Route path="/welcome" element={<WelcomePage />} />
             <Route path="/navigation-workspaces" element={<NavigationAndWorkspacesPage />} />
+            <Route path="/context-info" element={<ContextInfoPage />} />
             <Route index element={<Navigate replace to="/welcome" />} />
           </Routes>
         </div>

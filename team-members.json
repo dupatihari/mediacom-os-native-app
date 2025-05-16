@@ -1,0 +1,26 @@
+[
+  {
+    "client": "Coke",
+    "market": "US",
+    "members": [
+      { "name": "Alice", "role": "Strategist" },
+      { "name": "Bob", "role": "Planner" }
+    ]
+  },
+  {
+    "client": "Pepsi",
+    "market": "UK",
+    "members": [
+      { "name": "Charlie", "role": "Analyst" },
+      { "name": "Daisy", "role": "Coordinator" }
+    ]
+  },
+  {
+    "client": "2K",
+    "market": "UK",
+    "members": [
+      { "name": "Charlie", "role": "Analyst" },
+      { "name": "Daisy", "role": "Coordinator" }
+    ]
+  }
+]
