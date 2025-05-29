@@ -58,7 +58,7 @@ const ContextInfoPage = () => {
           boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
         }}
       >
-        <h2 style={{ textAlign: 'center', color: '#333', marginBottom: '1.5rem' }}>OS Context Information</h2>
+        <h2 style={{ textAlign: 'center', color: '#333', marginBottom: '1.5rem' }}>OS Context Information !</h2>
 
         <div style={{ marginBottom: '1rem' }}>
           <strong style={{ color: '#888' }}>Tenant:</strong>
